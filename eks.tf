@@ -10,15 +10,15 @@ variable "vpcworkspace" {
   default     = "EKSClusterTerraform"
 }
 
-terraform {
-  backend "remote" {
-    organization = "Hackathon4Life"
-    hostname = "app.terraform.io"
-    workspaces {
-      name = "EKSClusterTerraform"
-    }
-  }
-}
+# terraform {
+#   backend "remote" {
+#     organization = "Hackathon4Life"
+#     hostname = "app.terraform.io"
+#     workspaces {
+#       name = "EKSClusterTerraform"
+#     }
+#   }
+# }
 
 
 data "terraform_remote_state" "vpc" {
