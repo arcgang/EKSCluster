@@ -7,7 +7,7 @@ variable "organization" {
 variable "vpcworkspace" {
   description = "Vpc workspace name inorder to fetch vpc details"
   type        = string
-  default     = "EKSClusterTerraform"
+  default     = "VPCWorkspace"
 }
 
 # terraform {
