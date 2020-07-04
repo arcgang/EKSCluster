@@ -56,8 +56,8 @@ data "aws_iam_policy_document" "worker_policy" {
   }
 }
 
-resource "aws_iam_policy" "eks_worker_group_additional_policy" {
-  name        = "eks_worker_group_additional_policy"
+resource "aws_iam_policy" "eks_worker_group_additional_policy_1" {
+  name        = "eks_worker_group_additional_policy_1"
   path        = "/"
   description = "eks worker group additional policy"
 
@@ -115,8 +115,8 @@ module "onerfp-cluster" {
   #   } 
   # }
 
-  worker_additional_security_group_ids = [data.terraform_remote_state.vpc.outputs.vpc_cidr_block]
-  workers_additional_policies = [aws_iam_policy.eks_worker_group_additional_policy.arn]
+  worker_additional_security_group_ids = [data.terraform_remote_state.vpc.outputs.security_group_ids]
+  workers_additional_policies = [aws_iam_policy.eks_worker_group_additional_policy_1.arn]
 }
 
 # output "cluster_endpoint" {
