@@ -115,7 +115,7 @@ module "onerfp-cluster" {
   #   } 
   # }
 
-  worker_additional_security_group_ids = [data.terraform_remote_state.vpc.outputs.security_group_ids]
+  worker_additional_security_group_ids = data.terraform_remote_state.vpc.outputs.security_group_ids
   workers_additional_policies = [aws_iam_policy.eks_worker_group_additional_policy_1.arn]
 }
 
